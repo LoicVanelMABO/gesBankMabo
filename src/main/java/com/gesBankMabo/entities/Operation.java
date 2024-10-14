@@ -17,9 +17,18 @@ public class Operation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
     private double amount;
+
+    @Column(nullable = false)
     private Date dateOperation;
+
+    @Column(nullable = false)
     private TypeOperation typeOperation;
+
+    @Column(nullable = false)
+    private  String numOperation;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "compte_id", nullable = false)
