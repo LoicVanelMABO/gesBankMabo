@@ -3,10 +3,12 @@ package com.gesBankMabo.services;
 import com.gesBankMabo.dto.ClientDto;
 import com.gesBankMabo.entities.Client;
 import com.gesBankMabo.repositories.ClientRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ClientServiceImplement implements ClientService{
     final  ClientRepository clientRepository;
     ClientServiceImplement(final ClientRepository clientRepository){
