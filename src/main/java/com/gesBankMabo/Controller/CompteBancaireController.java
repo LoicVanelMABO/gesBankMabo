@@ -53,7 +53,7 @@ public class CompteBancaireController {
         return this.compteService.activerCompte(numCompte);
     }
 
-    @GetMapping("/active/{numCompte}")
+    @GetMapping("/suspendre/{numCompte}")
     boolean suspendreCompte(@PathVariable("numCompte") String numCompte){
         return this.compteService.suspendreCompte(numCompte);
     }
