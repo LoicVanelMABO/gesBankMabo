@@ -7,12 +7,11 @@ import com.gesBankMabo.enums.AccountStatus;
 import com.gesBankMabo.enums.TypeOperation;
 import com.gesBankMabo.repositories.CompteBancaireRepository;
 import com.gesBankMabo.repositories.OperationRepository;
+import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
+@Service
 public class OperationServiceImplement implements OperationService{
     private final CompteBancaireRepository compteBancaireRepository;
     private final OperationRepository operationRepository;
@@ -114,6 +113,17 @@ public class OperationServiceImplement implements OperationService{
             }
         }
         return false;
+    }
+
+    @Override
+    public List<Operation> findAllOperationByClient(String numCompte) {
+        List<Operation> zList = new ArrayList<>();
+        for(Operation o : this.operationRepository.findAll()){
+            if(o.getCompte().getNumCompte().equals(numCompte)){
+                zList.add(o);
+            }
+        }
+        return zList;
     }
 
     public static String generateAccoundNumber(){

@@ -14,7 +14,7 @@ public class OperationDto {
     private String numCompteSource;
     private String numCompteDestinataire;
 
-    public OperationDto() {
+    /*public OperationDto() {
     }
 
     public OperationDto(long compteId, double amount, String numCompte, String numCompteSource, String numCompteDestinataire) {
@@ -23,7 +23,7 @@ public class OperationDto {
         this.numCompte = numCompte;
         this.numCompteSource = numCompteSource;
         this.numCompteDestinataire = numCompteDestinataire;
-    }
+    }*/
 
     public String getNumCompteSource() {
         return numCompteSource;

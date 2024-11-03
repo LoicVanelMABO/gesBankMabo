@@ -23,13 +23,13 @@ import java.util.Date;
 public class CompteCourant extends CompteBancaire implements Serializable {
     private double decouvert;
 
-    public CompteCourant() {
+    /*public CompteCourant() {
     }
 
     public CompteCourant(long id, double balance, String numCompte, String devis, AccountStatus status, Date createdAt, Client client, Collection<Operation> operations, double decouvert) {
         super(id, balance, numCompte, devis, status, createdAt, client, operations);
         this.decouvert = decouvert;
-    }
+    }*/
 
     public double getDecouvert() {
         return decouvert;

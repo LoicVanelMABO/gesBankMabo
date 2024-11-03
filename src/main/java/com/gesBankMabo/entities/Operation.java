@@ -34,7 +34,7 @@ public class Operation implements Serializable {
     @JoinColumn(name = "compte_id", nullable = false)
     private CompteBancaire compte;
 
-    public Operation() {
+    /*public Operation() {
     }
 
     public Operation(long id, double amount, Date dateOperation, TypeOperation typeOperation, String numOperation, CompteBancaire compte) {
@@ -44,7 +44,7 @@ public class Operation implements Serializable {
         this.typeOperation = typeOperation;
         this.numOperation = numOperation;
         this.compte = compte;
-    }
+    }*/
 
     public long getId() {
         return id;

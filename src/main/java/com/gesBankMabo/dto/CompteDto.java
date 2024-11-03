@@ -14,7 +14,7 @@ public class CompteDto {
     private double decouvert;
     private long clientId;
 
-    public CompteDto() {
+    /*public CompteDto() {
     }
 
     public CompteDto(String devis, double balance, double tauxInteret, double decouvert, long clientId) {
@@ -23,7 +23,7 @@ public class CompteDto {
         this.tauxInteret = tauxInteret;
         this.decouvert = decouvert;
         this.clientId = clientId;
-    }
+    }*/
 
     public String getDevis() {
         return devis;

@@ -17,4 +17,6 @@ public interface OperationService {
     CompteBancaire effectuerVersement(OperationDto operationDto);
     CompteBancaire effectuerRetrait(OperationDto operationDto);
     Boolean effectuerVirement(OperationDto operationDto);
+
+    List<Operation> findAllOperationByClient(String numCompte);
 }

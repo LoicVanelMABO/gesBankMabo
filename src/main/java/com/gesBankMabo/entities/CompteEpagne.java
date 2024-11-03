@@ -23,12 +23,12 @@ import java.util.Date;
 public class CompteEpagne extends CompteBancaire implements Serializable {
     private double TauxInteret;
 
-    public CompteEpagne(long id, double balance, String numCompte, String devis, AccountStatus status, Date createdAt, Client client, Collection<Operation> operations) {
+   /* public CompteEpagne(long id, double balance, String numCompte, String devis, AccountStatus status, Date createdAt, Client client, Collection<Operation> operations) {
         super(id, balance, numCompte, devis, status, createdAt, client, operations);
     }
 
     public CompteEpagne() {
-    }
+    }*/
 
     public double getTauxInteret() {
         return TauxInteret;
