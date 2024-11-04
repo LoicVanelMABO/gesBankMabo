@@ -24,7 +24,7 @@ public class CompteServiceImplement implements CompteService{
 
     @Override
     public void createCompte(CompteDto compteDto) {
-        //je verifie si un compte est le clien existe
+        //je verifie si un compte est le client existe
         Optional<Client> clientOptional = this.clientRepository.findById(compteDto.getClientId());
         if (clientOptional.isPresent() && (compteDto.getDecouvert() > 0 && compteDto.getTauxInteret() == 0)){
             CompteCourant compteCourant = new CompteCourant();
@@ -33,6 +33,7 @@ public class CompteServiceImplement implements CompteService{
             compteCourant.setBalance(compteDto.getBalance());
             compteCourant.setClient(clientOptional.get());
             compteCourant.setDevis(compteDto.getDevis());
+            compteCourant.setStatus(AccountStatus.ACTIVATTED);
             compteCourant.setNumCompte(generateAccoundNumber());
 
             this.compteBancaireRepository.save(compteCourant);

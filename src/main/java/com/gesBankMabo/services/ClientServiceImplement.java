@@ -22,7 +22,7 @@ public class ClientServiceImplement implements ClientService{
         client.setNom(clientDto.getNom());
         client.setBirthday(clientDto.getBirthday());
         client.setAddresse(clientDto.getAddresse());
-        client.setEmail(client.getEmail());
+        client.setEmail(clientDto.getEmail());
         client.setPrenom(clientDto.getPrenom());
         client.setTel(clientDto.getTel());
 
