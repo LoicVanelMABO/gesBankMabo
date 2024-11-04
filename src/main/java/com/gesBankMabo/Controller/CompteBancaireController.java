@@ -5,6 +5,7 @@ import com.gesBankMabo.entities.CompteBancaire;
 import com.gesBankMabo.entities.CompteCourant;
 import com.gesBankMabo.entities.CompteEpagne;
 import com.gesBankMabo.services.CompteService;
+import com.gesBankMabo.services.CompteServiceImplement;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +15,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "account")
 public class CompteBancaireController {
-    private final CompteService compteService;
+    private final CompteServiceImplement compteService;
 
-    public CompteBancaireController(CompteService compteService) {
+    public CompteBancaireController(CompteServiceImplement compteService) {
         this.compteService = compteService;
     }
 

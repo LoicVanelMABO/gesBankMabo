@@ -4,6 +4,7 @@ import com.gesBankMabo.dto.CompteDto;
 import com.gesBankMabo.dto.OperationDto;
 import com.gesBankMabo.entities.Operation;
 import com.gesBankMabo.services.OperationService;
+import com.gesBankMabo.services.OperationServiceImplement;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/operation")
 public class OperationController {
-    private final OperationService operationService;
+    private final OperationServiceImplement operationService;
 
-    public OperationController(OperationService operationService) {
+    public OperationController(OperationServiceImplement operationService) {
         this.operationService = operationService;
     }
 
