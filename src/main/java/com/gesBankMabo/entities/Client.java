@@ -1,6 +1,7 @@
 package com.gesBankMabo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ import java.util.Date;
 @Getter
 public class Client implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nom;
     private String prenom;
@@ -26,6 +27,8 @@ public class Client implements Serializable {
     private String email;
     private String addresse;
     private String tel;
+
+    @JsonManagedReference
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Collection<CompteBancaire> comptes = new ArrayList<>();
 

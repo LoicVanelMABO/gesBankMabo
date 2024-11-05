@@ -34,7 +34,7 @@ public class OperationController {
     }
 
     @GetMapping("/client/{numCompte}")
-    List<Operation> findAllOperationByClient(@PathVariable("numCompte") String numCompte, @RequestBody OperationDto operationDto){
+    List<Operation> findAllOperationByClient(@PathVariable("numCompte") String numCompte){
         return this.operationService.findAllOperationByClient(numCompte);
     }
 }

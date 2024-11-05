@@ -32,7 +32,7 @@ public class CompteBancaireController {
             return this.compteService.findCompteCourant();
         }
         if(type.equals("CE")){
-            return this.compteService.findCompteCourant();
+            return this.compteService.findCompteEpargne();
         }
         return null;
     }

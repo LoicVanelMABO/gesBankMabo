@@ -1,5 +1,6 @@
 package com.gesBankMabo.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.gesBankMabo.enums.TypeOperation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class Operation implements Serializable {
     @Column(nullable = false)
     private  String numOperation;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "compte_id", nullable = false)
     private CompteBancaire compte;

@@ -98,7 +98,7 @@ public class OperationServiceImplement implements OperationService{
         //DEBIT
         OperationDto dtoSource = new OperationDto();
         dtoSource.setAmount(operationDto.getAmount());
-        dtoSource.setNumCompte(operationDto.getNumCompteSource());
+        dtoSource.setNumCompte(numCompteSource);
         CompteBancaire compteBancaireSource = this.effectuerRetrait(dtoSource);
 
         if(compteBancaireSource != null){

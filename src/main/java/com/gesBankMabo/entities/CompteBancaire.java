@@ -1,6 +1,7 @@
 package com.gesBankMabo.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gesBankMabo.enums.AccountStatus;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,7 +18,7 @@ import java.util.Date;
 @DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.INTEGER)
 public abstract class CompteBancaire implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable = false)
@@ -35,11 +36,12 @@ public abstract class CompteBancaire implements Serializable {
     @Column(nullable = false)
     private Date createdAt = new Date();
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToMany(mappedBy = "compte",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Collection<Operation> operations = new ArrayList<>();
 
