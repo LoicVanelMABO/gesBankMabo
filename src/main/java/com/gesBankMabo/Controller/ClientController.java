@@ -13,7 +13,7 @@ import java.util.Optional;
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(value = "v1")
+@RequestMapping(value = "clients")
 public class ClientController {
     @Autowired
     private final ClientServiceImplement clientService;
@@ -22,17 +22,17 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @PostMapping("/clients")
+    @PostMapping("")
     void createClient(@RequestBody ClientDto clientDto){
         this.clientService.createNewClient(clientDto);
     }
 
-    @GetMapping("/clients")
+    @GetMapping("")
     List<Client> listClients(){
         return this.clientService.findAll();
     }
 
-    @GetMapping("/clients/{id}")
+    @GetMapping("/{id}")
     Optional<Client> oneClient(@PathVariable("id") long id){
         return this.clientService.findOne(id);
     }
