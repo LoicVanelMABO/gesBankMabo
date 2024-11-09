@@ -26,7 +26,7 @@ public class ClientController {
     void createClient(@RequestBody ClientDto clientDto){
         this.clientService.createNewClient(clientDto);
     }
-
+    //test
     @GetMapping("")
     List<Client> listClients(){
         return this.clientService.findAll();
